@@ -32,8 +32,7 @@ T[:,-1] = T_edge
 
 # # visulize the initial temperature 
 
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
+
 
 # print(T)
 
@@ -71,11 +70,13 @@ def update_temperature(T, dx, dy, dt, alpha):
     
     return T_new
 
-ax = sns.heatmap(T, cmap= "rocket_r", vmax = 100)
-plt.show()
+# ax = sns.heatmap(T, cmap= "rocket_r", vmax = 100,yticklabels=False,xticklabels=False)
+# plt.show()
 
 for step in range(num_steps):
     T = update_temperature(T, dx, dy, dt, alpha)
+
+
     
     # Optional: Visualization at specific time steps
     if step % 10 == 0:  # Adjust the frequency of visualization as needed
@@ -85,8 +86,11 @@ for step in range(num_steps):
         # plt.xlabel('X Position (m)')
         # plt.ylabel('Y Position (m)')
         # plt.show()
-        ax = sns.heatmap(T, cmap= "rocket_r", vmax = 100)
-        plt.show()
+        ax = sns.heatmap(T, cmap= "rocket_r", vmax = 100,yticklabels=False,xticklabels=False)
+        plt.subplot(2,5,int(step/10+1))
+        plt.title("t = " + str(step*dt))
+plt.show()
+
 
 # plt.imshow(T, origin='lower', cmap=cm.hot, extent=(0, width, 0, height))
 # plt.colorbar(label='Temperature (°C)')
@@ -97,5 +101,8 @@ for step in range(num_steps):
         
 
 
-ax = sns.heatmap(T, cmap= "rocket_r", vmax = 100)
-plt.show()
+# ax = sns.heatmap(T, cmap= "rocket_r", vmax = 100,yticklabels=False,xticklabels=False)
+# plt.title("t = " + str(step*dt))
+# plt.show()
+
+
