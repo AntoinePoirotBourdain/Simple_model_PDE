@@ -30,21 +30,12 @@ T[:,0]  = T_edge
 T[-1,:] = T_edge
 T[:,-1] = T_edge
 
-# # visulize the initial temperature 
 
 
-
-# print(T)
-
-# plt.imshow(T, origin='lower', cmap=cm.hot, extent=(0, width, 0, height))
-# plt.colorbar(label='Temperature (°C)')
-# plt.title('Initial Temperature Distribution')
-# plt.xlabel('X Position (m)')
-# plt.ylabel('Y Position (m)')
-# plt.show()
+# Thermal diffusivity water : 0.14558 mm²/s
 
 
-alpha = 1.0e-4  # Thermal diffusivity (m^2/s)
+alpha = 1.4558e-3  # Thermal diffusivity (cm^2/s)
 
 # Time-stepping parameters
 dt = 0.25 * min(dx*dx, dy*dy) / alpha  # Time step size (s), chosen based on CFL condition

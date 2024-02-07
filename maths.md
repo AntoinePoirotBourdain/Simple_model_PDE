@@ -2,6 +2,8 @@ System of the heat partial differential equation
 
 $$\frac{\delta T}{\delta t} = \alpha ( \frac{\delta^{2}T}{\delta^{2}x} + \frac{\delta^{2}T}{\delta^{2}y})$$
 
+Solve with Explicit Euler's methode
+
 Approximation temporal derivative
 
 $$ \frac{\delta T}{\delta t} \approx \frac{T^{n+1}_{i,j} - T^{n}_{i,j}}{\Delta t}  $$
